@@ -34,7 +34,7 @@ const Navbar = (props) => {
             className="collapse navbar-collapse justify-content-end"
             id="navigation"
           >
-            <form>
+            {/* <form>
               <div className="input-group no-border">
                 <input
                   type="text"
@@ -49,7 +49,7 @@ const Navbar = (props) => {
                   </div>
                 </div>
               </div>
-            </form>
+            </form> */}
           </div>
         </div>
       </nav>

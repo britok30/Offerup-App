@@ -1,6 +1,9 @@
 import React from "react";
 
 const Item = props => {
+
+  const item = props.item;
+
   return (
     <div className="col-lg-6 col-md-6 col-sm-6">
       <div className="card card-stats">
@@ -13,8 +16,8 @@ const Item = props => {
             </div>
             <div className="col-7 col-md-8">
               <div className="numbers">
-                <p className="card-category">Capacity</p>
-                <p className="card-title">150GB</p>
+                <p className="card-category">{item.label}</p>
+                <p className="card-title">${item.price}</p>
               </div>
             </div>
           </div>

@@ -1,11 +1,14 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Home from "./components/Home";
+import "./App.css";
+import store from "./store";
+import { Provider } from "react-redux";
 
 const App = () => {
   return (
-    <Fragment>
+    <Provider store={store.configure(null)}>
       <Home />
-    </Fragment>
+    </Provider>
   );
 };
 
