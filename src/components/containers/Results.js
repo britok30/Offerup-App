@@ -21,16 +21,13 @@ class Results extends Component {
   }
 
   addItem() {
-    console.log("ADD ITEM: " + JSON.stringify(this.state.item));
+    // console.log("ADD ITEM: " + JSON.stringify(this.state.item));
 
     let newItem = Object.assign({}, this.state.item);
 
-    newItem["id"] = this.props.item.all.length;
-    newItem["key"] = this.props.item.all.length.toString();
-    newItem["defaultAnimation"] = 2;
+    const len = this.props.item.all.length + 1;
+    newItem["id"] = len.toString()
     newItem["position"] = this.props.map.currentLocation;
-
-    // this.props.addItem(this.state.item);
     this.props.addItem(newItem);
   }
 
@@ -52,10 +49,10 @@ class Results extends Component {
                     className="form-control"
                     placeholder="Name"
                     style={localStyle.input}
-                    onChange={this.updateItem.bind(this, "label")}
+                    onChange={this.updateItem.bind(this, "name")}
                   />
                   <input
-                    type="text"
+                    type="number"
                     className="form-control"
                     placeholder="Price"
                     style={localStyle.input}
