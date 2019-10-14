@@ -6,7 +6,7 @@ import actions from "../../store/actions";
 class Results extends Component {
   state = {
     item: {
-      position: { lat: 40.71224017, lng: -73.9796719 }
+      // position: { lat: 40.71224017, lng: -73.9796719 }
     }
   };
 
@@ -28,6 +28,7 @@ class Results extends Component {
     newItem["id"] = this.props.item.all.length;
     newItem["key"] = this.props.item.all.length.toString();
     newItem["defaultAnimation"] = 2;
+    newItem["position"] = this.props.map.currentLocation;
 
     // this.props.addItem(this.state.item);
     this.props.addItem(newItem);
@@ -93,7 +94,8 @@ const localStyle = {
 
 const stateToProps = state => {
   return {
-    item: state.item
+    item: state.item,
+    map: state.map
   };
 };
 
